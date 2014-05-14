@@ -47,3 +47,4 @@ end
 gem 'rails_12factor', group: :prodcution
 gem 'httparty'
 
+gem 'font-awesome-rails'

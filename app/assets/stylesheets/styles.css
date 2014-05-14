@@ -4,3 +4,33 @@
   height: 150px;
   margin-top: 20px;
 }
+
+.gen_but {
+  background-color: lightgray;
+  width: 260px;
+  font-size: 16px;
+}
+
+.top {
+  background-color: lightblue;
+  font-size: 30px;
+  text-align: center;
+  height: 50px;
+  padding-top: 20px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+input[type="text"].songinput {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 250px;
+
+}
+
+
+.sampler {
+  text-align: center;
+}

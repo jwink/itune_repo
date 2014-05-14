@@ -1,6 +1,43 @@
-<h1>Tunr</h1>
 
-<form action="/songs/search" method="get">
-  <input type="text" name ="search_term" placeholder="Song">
-  <input type="submit">
-</form>
+<div class="container">
+    <div class="row"></div>
+    <div class="eight columns welcome">
+        <h3>Welcome Back <%=@current_listener.username%>!</h3>
+        <div class="row"></div>
+        <form action="/songs/search" method="get">
+          <input class="songinput" type="text" name ="search_term" placeholder="Song">
+          <button type="submit" class="gen_but">Get Songs</button>
+        </form>
+    </div>
+
+    <div class="eight columns songlist omega">
+        <% @songs.each do |song| %>
+        <div class="four columns alpha">
+            <img src="<%= song.artwork_url %>" alt="">
+            <h5>
+            <%= song.title %>
+            </h5>
+            <div class="one column">
+            <form action="/songs/<%=song.id%>/play" method="get">
+                 <button type="submit"><i class="fa fa-caret-square-o-right"></i>
+                 </button>
+            </form>
+            </div>
+
+            <div class="one column">
+            <form action="/songs/<%=song.id%>" method="post">
+                <%= token_tag %>
+                 <input type="hidden" name="_method" value="delete">
+                 <button type="submit"><i class='fa fa-trash-o'></i>
+                 </button>
+            </form>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+</div>
+
+<% if false %>
+<audio controls="controls" src="<%= song.preview_link %>"></audio>
+<% end %>
